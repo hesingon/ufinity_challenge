@@ -11,7 +11,7 @@ To test backend, run `npm test`.
 
 ## Notes
 
-##### 1. As a teacher, I want to register one or more students to a specified teacher.
+#### 1. As a teacher, I want to register one or more students to a specified teacher.
 Preconditions:
 1. teacher must already exist. If teacher does not exist, it will be created.
 
@@ -19,8 +19,7 @@ tests
 1. Compare database for before and after.
 2. Verify the new entry is displayed.
 
-##### 2. As a teacher, I want to retrieve a list of students common to a given list of teachers 
-Preconditions: all teachers exist, if not send 406 (not acceptable)
+#### 2. As a teacher, I want to retrieve a list of students common to a given list of teachers 
 tests:
 1. query the database multiple times, put them into sets and find intersection to check if the result printed is correct.
 
