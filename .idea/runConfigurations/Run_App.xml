@@ -1,5 +1,8 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Run App" type="NodeJSConfigurationType" path-to-js-file="www.js" working-dir="$PROJECT_DIR$/bin">
+  <configuration default="false" name="Run App" type="NodeJSConfigurationType" path-to-js-file="www" working-dir="$PROJECT_DIR$/bin">
+    <envs>
+      <env name="NODE_ENV" value="development" />
+    </envs>
     <method v="2" />
   </configuration>
 </component>
