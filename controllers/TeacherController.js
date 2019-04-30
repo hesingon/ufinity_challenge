@@ -59,8 +59,6 @@ const registerStudent = async (req, res) => {
             `while ${studentTableDuplicateCount - registrationTableDuplicateCount} are already registered with some other teachers.`);
             res.sendStatus(204);
         })
-
-
 };
 
 const commonStudents = async (req, res) => {

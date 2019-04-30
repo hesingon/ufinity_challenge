@@ -40,20 +40,16 @@ describe('Test Ufinity Challenge API Routes', function () {
                         queryList.push(db.query(`SELECT student FROM registration WHERE teacher="${teacher}"`))
                     });
 
-                    var finalSet, areValuesConsistent;
-
+                    var finalSet;
                     var studentGroups = [];
+
                     Promise.all(queryList)
                         .then((results => {
                             results.forEach(studentGroup => {
                                     let studentsUnderATeacher = new Set();
-                                    studentGroup.forEach(item => {
-                                            studentsUnderATeacher.add(item.student)
-                                        }
-                                    );
+                                    studentGroup.forEach(item => studentsUnderATeacher.add(item.student));
                                     studentGroups.push(studentsUnderATeacher)
-                                }
-                            )
+                                })
                         }))
                         .then(() => {
                             console.log("start");
