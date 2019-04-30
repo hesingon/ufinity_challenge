@@ -1,6 +1,9 @@
-module.exports = {
+
+const config = {
     host: 'localhost',
-    dbuser: 'root',
-    dbname: 'demo2',
-    dbpassword: '12345678'
+    user: 'root',
+    password: '12345678',
+    database: 'ufinity',
 };
+
+module.exports = config;
