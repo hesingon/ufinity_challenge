@@ -1,17 +1,10 @@
-var supertest = require('supertest');
-var chaiAsPromised = require('chai-as-promised');
 var chai = require('chai'), chaiHttp = require('chai-http');
 chai.use(chaiHttp);
-chai.use(chaiAsPromised);
-var uuid = require('uuid');
 var app = require('../app.js');
 const db = require('../db');
 const { intersection, isSameSet } = require('../db/queryHelpers');
 
-// global.app = app;
-global.uuid = uuid;
 global.expect = chai.expect;
-global.app = supertest(app);
 
 describe('Test Ufinity Challenge API Routes', function () {
     // This function will run before every test to clear database

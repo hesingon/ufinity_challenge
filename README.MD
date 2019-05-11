@@ -36,3 +36,8 @@ test:
 1. join the query result and those mentioned together and check if they belong to either group
 
 default error code/message: 400 Bad Request
+
+### Dev-Dependencies
+mocha: A test framework for javascript
+chai: A default assertion library that works with Mocha
+chai-http: a chai middleware to provide http request methods

@@ -24,14 +24,19 @@ const duplicateErrorHandler = (err) => {
         throw err;
 };
 
-const commonStudentQueryBuilder = (arr) => {
-    var query = `SELECT student FROM registration WHERE teacher="${arr[0]}"`;
-    if (arr.length > 1) {
-        for (var i = 1; i < arr.length; i++) {
+const commonStudentQueryBuilder = (teacherList) => {
+    var query;
+    // if there's only 1 teacher, arr is
+    // only a string, else it's an array.
+    if (Array.isArray(teacherList)) {
+        query = `SELECT student FROM registration WHERE teacher="${teacherList[0]}"`;
+        for (var i = 1; i < teacherList.length; i++) {
             query = query + " AND " +
-                `registration.student IN (SELECT student FROM registration WHERE teacher="${arr[i]}")`;
+                `registration.student IN (SELECT student FROM registration WHERE teacher="${teacherList[i]}")`;
         }
     }
+    else
+        query = `SELECT student FROM registration WHERE teacher="${teacherList}"`;
     return query;
 };
 
